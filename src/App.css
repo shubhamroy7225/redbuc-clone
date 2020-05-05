@@ -6,6 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
+body, .sticky-footer-wrapper {
+  min-height:100vh;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -26,6 +31,23 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#mainNavbar {
+  font-size: 1rem;
+  font-weight: 100; 
+  background-color:#d84f57 !important
+}
+#mainNavbar .nav-link {
+color: white;
+font-weight: 300;
+}
+.nav-item{
+  padding:5px;
+}
+
+.footer{
+  background-color: black;
 }
 
 @keyframes App-logo-spin {
