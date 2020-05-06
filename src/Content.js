@@ -12,13 +12,11 @@ class Content extends Component {
   <input type="text" aria-label="destination" className="form-control" placeholder="Destination"/>
   <input type="text" aria-label="destination" className="form-control" placeholder="Start Date"/>
   <input type="text" aria-label="destination" className="form-control" placeholder="Return Date(optional)"/>
-  
-  <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+ 
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
-                </div>
+           
   
   
   
