@@ -34,8 +34,8 @@ body, .sticky-footer-wrapper {
 }
 
 #mainNavbar {
-  font-size: 1rem;
-  font-weight: 100; 
+  font-size: 0.8rem;
+  font-weight: 200; 
   background-color:#d84f57 !important
 }
 #mainNavbar .nav-link {
@@ -49,6 +49,62 @@ font-weight: 300;
 .footer{
   background-color: black;
 }
+.footer-list-item{
+  
+  color: white !important;
+  font-size: 0.8rem;
+  text-align: start;
+  font-weight: lighter;
+  
+  
+ 
+}
+
+
+
+.footer-lists-heading{
+  font-weight: bold;
+  color:gray;
+  text-align: start;
+  
+
+}
+.footer-desc-col{
+ justify-content: flex-start;
+ text-align: start;
+}
+.desc{
+  font-size: small;
+  text-align: start;
+  color: white;
+  font-weight: lighter;
+  
+}
+
+ .sticky-footer-wrapper {
+  min-height:100vh;
+  font-family:'Montserrat'; 
+}
+.flex-fill {
+  flex:1 1 auto;
+}
+
+.Search{
+  height: 50vh;
+  justify-content: center;
+  background-image: url("./images/francesca-tirico-9G9vxsMzi18-unsplash.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+ 
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+
+
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

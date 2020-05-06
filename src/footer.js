@@ -1,47 +1,190 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 class Footer extends Component {
-    
-    render() { 
-        return ( 
-            <footer class="footer fixed-bottom">
-  <div class="container">
-  
-    <div class="row">
-      <div class="col-lg-2">
+  render() {
+    return (
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 mt-5">
+              <p className="footer-lists-heading">About redBus</p>
+              <ul className="list-unstyled">
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    About Us
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Mobile Version
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    redBus on Mobile
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Sitemap
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Offers
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Careers
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Values
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-   
-      </div>
-      <div class="col-lg-2">
-        <h2>Heading</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-       
-      </div>
-      <div class="col-lg-2">
-        
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-       
-      </div>
-      <div class="col-lg-2">
-        
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-       
-      </div>
-      <div class="col-lg-3 ml-auto">
-        
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-       
-      </div>
-    </div>
-
-  </div>
-</footer>
-         );
-    }
+            <div class="col-lg-2 mt-5">
+              <p className="footer-lists-heading">Info</p>
+              <ul className="list-unstyled">
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    T & C
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    FAQ
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Blog
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Agent Registration
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Insurance Partner
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    User Agreement
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 mt-5">
+              <p className="footer-lists-heading">Global Sites</p>
+              <ul className="list-unstyled">
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    India
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Singapore
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Malaysia
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Indonesia
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Peru
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Colombia
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 mt-5">
+              <p className="footer-lists-heading">Partners</p>
+              <ul className="list-unstyled">
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Goibibo
+                  </a>
+                </li>
+                <li className="footer-list-item mb-1">
+                  <a className="footer-list-item" href="/">
+                    Makemytrip
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-4 ml-auto mt-4 desc">
+              <div className="footer-desc-col mb-3">
+                <img
+                  src={require("./images/transport.png")}
+                  width="60"
+                  height="60"
+                  alt="pic"
+                />
+              </div>
+              <p>
+                redBus is the world's largest online bus ticket booking service
+                trusted by over 17 million happy customers globally. redBus
+                offers bus ticket booking through its website,iOS and Android
+                mobile apps for all major routes.{" "}
+              </p>
+              <div>
+                <img
+                  className="mr-2"
+                  src={require("./images/brands-and-logotypes.svg")}
+                  width="30"
+                  height="30"
+                  alt="pic"
+                />
+                <img
+                  className="mr-2"
+                  src={require("./images/twitter.svg")}
+                  width="30"
+                  height="30"
+                  alt="pic"
+                />
+                <img
+                  src={require("./images/instagram.svg")}
+                  width="30"
+                  height="30"
+                  alt="pic"
+                />
+              </div>
+              <p className="mt-2">Ⓒ2020 ibibogroup All rights reserved </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 }
- 
-export default Footer ;
+
+export default Footer;
