@@ -1,6 +1,20 @@
 import React, { Component } from "react";
+// Import Datepicker
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class Content extends Component {
+  state = {
+    startDate: new Date(),
+  };
+
+  handleChange = (date) => {
+    this.setState({
+      startDate: date,
+    });
+  };
+
   render() {
     return (
       <div className="container-fluid Search ">
@@ -18,11 +32,12 @@ class Content extends Component {
               className="form-control"
               placeholder="Destination"
             />
-            <input
-              type="text"
-              aria-label="destination"
-              className="form-control"
-              placeholder="Start Date"
+            <DatePicker
+            className="form-control"
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+              placeholder="start date"
+
             />
             <input
               type="text"
@@ -30,10 +45,6 @@ class Content extends Component {
               className="form-control"
               placeholder="Return Date(optional)"
             />
-
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
 
             <div className="input-group-prepend">
               <button className="input-group-text">Search</button>
