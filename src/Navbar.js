@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 
-<<<<<<< HEAD
 
 
 
 //extra commit
 
-||||||| merged common ancestors
-=======
 // for new commit
 
->>>>>>> master
 class navbarInstance extends Component {
   render() {
     return (
