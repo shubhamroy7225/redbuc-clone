@@ -36,7 +36,7 @@ class Content extends Component {
             className="form-control"
               selected={this.state.startDate}
               onChange={this.handleChange}
-              placeholder="start date"
+              
 
             />
             <input
