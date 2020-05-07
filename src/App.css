@@ -23,6 +23,48 @@ body, .sticky-footer-wrapper {
   }
 }
 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#mainNavbar {
+  font-size: 0.8rem;
+  font-weight: 200; 
+  background-color:#d84f57 !important
+}
+#mainNavbar .nav-link {
+color: white;
+font-weight: 300;
+}
+.nav-item{
+  padding:5px;
+}
+
+.footer{
+  background-color: black;
+}
+.footer-list-item{
+  
+  color: white !important;
+  font-size: 0.8rem;
+  text-align: start;
+  font-weight: lighter;
+  
+  
+ 
+}
+
 
 
 .footer-lists-heading{

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+// for new commit
+
 class navbarInstance extends Component {
   render() {
     return (
