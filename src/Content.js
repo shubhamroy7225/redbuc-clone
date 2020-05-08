@@ -72,6 +72,7 @@ class Content extends Component {
                 placeholderText="Onward Date"
                 selected={this.state.startDate}
                 onChange={this.handleChange}
+                minDate = {new Date()}
               />
             </div>
             <div className="autocomplete-wrapper">
@@ -79,6 +80,7 @@ class Content extends Component {
                 placeholderText="Return Date(Optional)"
                 selected={this.state.returnDate}
                 onChange={this.handleChange1}
+                minDate = {this.state.startDate}
               />
             </div>
             <div className="">
