@@ -13,12 +13,12 @@ class Content extends Component {
     returnDate: "",
   };
 
-  handleChange = (date) => {
+  pickOnwardDate = (date) => {
     this.setState({
       startDate: date,
     });
   };
-  handleChange1 = (date) => {
+  pickReturnDate = (date) => {
     this.setState({
       returnDate: date,
     });
@@ -71,7 +71,7 @@ class Content extends Component {
               <DatePicker
                 placeholderText="Onward Date"
                 selected={this.state.startDate}
-                onChange={this.handleChange}
+                onChange={this.pickOnwardDate}
                 minDate = {new Date()}
               />
             </div>
@@ -79,7 +79,7 @@ class Content extends Component {
               <DatePicker
                 placeholderText="Return Date(Optional)"
                 selected={this.state.returnDate}
-                onChange={this.handleChange1}
+                onChange={this.pickReturnDate}
                 minDate = {this.state.startDate}
               />
             </div>
