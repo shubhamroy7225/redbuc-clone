@@ -1,13 +1,17 @@
 .App {
   text-align: center;
 }
-
+.react-datepicker__day--outside-month {
+  color: transparent !important;
+  pointer-events: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-body, .sticky-footer-wrapper {
-  min-height:100vh;
+body,
+.sticky-footer-wrapper {
+  min-height: 100vh;
   padding-top: 30px;
 }
 
@@ -37,80 +41,66 @@ body, .sticky-footer-wrapper {
 .App-link {
   color: #61dafb;
 }
-
+.searchbutton {
+  background-color: #d84f57 !important;
+}
 #mainNavbar {
   font-size: 0.8rem;
-  font-weight: 200; 
-  background-color:#d84f57 !important
+  font-weight: 200;
+  background-color: #d84f57 !important;
 }
 #mainNavbar .nav-link {
-color: white;
-font-weight: 300;
+  color: white;
+  font-weight: 300;
 }
-.nav-item{
-  padding:5px;
+.nav-item {
+  padding: 5px;
 }
 
-.footer{
+.footer {
   background-color: black;
 }
-.footer-list-item{
-  
+.footer-list-item {
   color: white !important;
   font-size: 0.8rem;
   text-align: start;
   font-weight: lighter;
-  
-  
- 
 }
 
-
-
-.footer-lists-heading{
+.footer-lists-heading {
   font-weight: bold;
-  color:gray;
+  color: gray;
   text-align: start;
-  
-
 }
-.footer-desc-col{
- justify-content: flex-start;
- text-align: start;
+.footer-desc-col {
+  justify-content: flex-start;
+  text-align: start;
 }
-.desc{
+.desc {
   font-size: small;
   text-align: start;
   color: white;
   font-weight: lighter;
-  
 }
 
- .sticky-footer-wrapper {
-  min-height:100vh;
-  font-family:'Montserrat'; 
+.sticky-footer-wrapper {
+  min-height: 100vh;
+  font-family: "Montserrat";
 }
 .flex-fill {
-  flex:1 1 auto;
+  flex: 1 1 auto;
 }
 
-.Search{
+.Search {
   height: 60vh;
   justify-content: center;
   background-image: url("./images/francesca-tirico-9G9vxsMzi18-unsplash.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
- 
+
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
+  background-size: cover;
 }
-
-
-
-
-
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -119,4 +109,64 @@ font-weight: 300;
   to {
     transform: rotate(360deg);
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+.input-group {
+  justify-content: center;
+}
+
+.autocomplete-wrapper {
+  width: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-wrapper > div {
+  width: 100%;
+}
+
+.autocomplete-wrapper input {
+  border: 1px solid #cecece;
+  padding: 12px 15px;
+  font-size: 14px;
+  width: 100%;
+  height: 37.5px;
+}
+
+.autocomplete-wrapper input:focus {
+  border-color: #d84f57 !important;
+  box-shadow: none;
+  outline: none;
+}
+
+.autocomplete-wrapper .dropdown {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  max-height: 280px;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #d84f57 !important;
+  border-top: none;
+}
+
+.autocomplete-wrapper .item {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.autocomplete-wrapper .item.selected-item {
+  background-color: #d84f57 !important;
+  color: #fafbfc;
+}
+
+.autocomplete-wrapper .item:hover {
+  background-color: #0069ff;
+  color: #fafbfc;
 }
