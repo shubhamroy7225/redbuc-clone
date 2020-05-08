@@ -7,8 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class Content extends Component {
   state = {
-    val: "",
-    val2: "",
+    sourceCityName: "",
+    destinationCityName: "",
     startDate: "",
     returnDate: "",
   };
@@ -32,7 +32,7 @@ class Content extends Component {
             <div className="autocomplete-wrapper">
               <Autocomplete
                 inputProps={{ placeholder: "From" }}
-                value={this.state.val}
+                value={this.state.sourceCityName}
                 items={CityData()}
                 getItemValue={(item) => item.cityName}
                 shouldItemRender={renderCityName}
@@ -44,14 +44,14 @@ class Content extends Component {
                     {item.cityName}
                   </div>
                 )}
-                onChange={(event, val) => this.setState({ val })}
-                onSelect={(val) => this.setState({ val })}
+                onChange={(event, sourceCityName) => this.setState({ sourceCityName })}
+                onSelect={(sourceCityName) => this.setState({ sourceCityName })}
               />
             </div>
             <div className="autocomplete-wrapper">
               <Autocomplete
                 inputProps={{ placeholder: "To" }}
-                value={this.state.val2}
+                value={this.state.destinationCityName}
                 items={CityData()}
                 getItemValue={(item) => item.cityName}
                 shouldItemRender={renderCityName}
@@ -63,8 +63,8 @@ class Content extends Component {
                     {item.cityName}
                   </div>
                 )}
-                onChange={(event, val2) => this.setState({ val2 })}
-                onSelect={(val2) => this.setState({ val2 })}
+                onChange={(event, destinationCityName) => this.setState({ destinationCityName })}
+                onSelect={(destinationCityName) => this.setState({ destinationCityName })}
               />
             </div>
             <div className="autocomplete-wrapper">
