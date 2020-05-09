@@ -1,17 +1,26 @@
 import React, { Component } from "react";
-// Import Datepicker
+import { CityData, renderCityName } from "./City";
+import Autocomplete from "react-autocomplete-2";
 import DatePicker from "react-datepicker";
-
+import "./App.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 class Content extends Component {
   state = {
-    startDate: new Date(),
+    sourceCityName: "",
+    destinationCityName: "",
+    startDate: "",
+    returnDate: "",
   };
 
-  handleChange = (date) => {
+  pickOnwardDate = (date) => {
     this.setState({
       startDate: date,
+    });
+  };
+  pickReturnDate = (date) => {
+    this.setState({
+      returnDate: date,
     });
   };
 
@@ -20,34 +29,62 @@ class Content extends Component {
       <div className="container-fluid Search ">
         <div className="search-Component mt-5">
           <div className="input-group">
-            <input
-              type="text"
-              aria-label="source"
-              className="form-control"
-              placeholder="Source"
-            />
-            <input
-              type="text"
-              aria-label="destination"
-              className="form-control"
-              placeholder="Destination"
-            />
-            <DatePicker
-            className="form-control"
-              selected={this.state.startDate}
-              onChange={this.handleChange}
-              
-
-            />
-            <input
-              type="text"
-              aria-label="destination"
-              className="form-control"
-              placeholder="Return Date(optional)"
-            />
-
-            <div className="input-group-prepend">
-              <button className="input-group-text">Search</button>
+            <div className="autocomplete-wrapper">
+              <Autocomplete
+                inputProps={{ placeholder: "From" }}
+                value={this.state.sourceCityName}
+                items={CityData()}
+                getItemValue={(item) => item.cityName}
+                shouldItemRender={renderCityName}
+                renderMenu={(item) => <div className="dropdown">{item}</div>}
+                renderItem={(item, isHighlighted) => (
+                  <div
+                    className={`item ${isHighlighted ? "selected-item" : ""}`}
+                  >
+                    {item.cityName}
+                  </div>
+                )}
+                onChange={(event, sourceCityName) => this.setState({ sourceCityName })}
+                onSelect={(sourceCityName) => this.setState({ sourceCityName })}
+              />
+            </div>
+            <div className="autocomplete-wrapper">
+              <Autocomplete
+                inputProps={{ placeholder: "To" }}
+                value={this.state.destinationCityName}
+                items={CityData()}
+                getItemValue={(item) => item.cityName}
+                shouldItemRender={renderCityName}
+                renderMenu={(item) => <div className="dropdown">{item}</div>}
+                renderItem={(item, isHighlighted) => (
+                  <div
+                    className={`item ${isHighlighted ? "selected-item" : ""}`}
+                  >
+                    {item.cityName}
+                  </div>
+                )}
+                onChange={(event, destinationCityName) => this.setState({ destinationCityName })}
+                onSelect={(destinationCityName) => this.setState({ destinationCityName })}
+              />
+            </div>
+            <div className="autocomplete-wrapper">
+              <DatePicker
+                placeholderText="Onward Date"
+                selected={this.state.startDate}
+                onChange={this.pickOnwardDate}
+                minDate = {new Date()}
+              />
+            </div>
+            <div className="autocomplete-wrapper">
+              <DatePicker
+                placeholderText="Return Date(Optional)"
+                selected={this.state.returnDate}
+                onChange={this.pickReturnDate}
+                minDate = {this.state.startDate}
+              />
+            </div>
+            <div className="">
+              <button className="searchbutton btn btn-danger">Search</button>
             </div>
           </div>
         </div>
@@ -55,5 +92,4 @@ class Content extends Component {
     );
   }
 }
-
 export default Content;
