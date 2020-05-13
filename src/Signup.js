@@ -40,14 +40,7 @@ export default class SignUp extends Component {
     }
     onSubmit = e => {
         e.preventDefault();
-
-        if (formValid(this.state)) {
-            console.log(this.state)
-        } else {
-            console.log("Form is invalid!");
-        }
     };
-
 
     formValChange = e => {
         e.preventDefault();
