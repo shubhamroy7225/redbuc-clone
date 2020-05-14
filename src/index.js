@@ -5,8 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.js';
-import $ from '../node_modules/jquery';
-import Popper from '../node_modules/popper.js';
+// import $ from '../node_modules/jquery';
+// import Popper from '../node_modules/popper.js';
 
 ReactDOM.render(
   <React.StrictMode>

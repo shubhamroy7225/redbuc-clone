@@ -120,3 +120,8 @@ font-weight: 300;
     transform: rotate(360deg);
   }
 }
+
+.react-datepicker__day--outside-month {
+  color:transparent !important;
+  pointer-events: none;
+}
