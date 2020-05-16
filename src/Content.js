@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { CityData, renderCityName } from "./City";
 import Autocomplete from "react-autocomplete-2";
 import DatePicker from "react-datepicker";
@@ -84,7 +85,10 @@ class Content extends Component {
               />
             </div>
             <div className="">
-              <button className="searchbutton btn btn-danger">Search</button>
+            <Link to={ {pathname: '/Search', myprops: { source:this.state.sourceCityName, destination:this.state.destinationCityName , date:'16 May'} }}>
+            <button className="searchbutton btn btn-danger">Search</button>
+        </Link>
+              
             </div>
           </div>
         </div>
