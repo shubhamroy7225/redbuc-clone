@@ -110,6 +110,7 @@ body,
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 
 * {
   box-sizing: border-box;
@@ -241,3 +242,240 @@ span {
 .custom-control-input {
   background-color: red;
 }
+||||||| merged common ancestors
+=======
+
+* {
+  box-sizing: border-box;
+}
+.input-group {
+  justify-content: center;
+}
+
+.autocomplete-wrapper {
+  width: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-wrapper > div {
+  width: 100%;
+}
+
+.autocomplete-wrapper input {
+  border: 1px solid #cecece;
+  padding: 12px 15px;
+  font-size: 14px;
+  width: 100%;
+  height: 37.5px;
+}
+
+.autocomplete-wrapper input:focus {
+  border-color: #d84f57 !important;
+  box-shadow: none;
+  outline: none;
+}
+
+.autocomplete-wrapper .dropdown {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  max-height: 280px;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #d84f57 !important;
+  border-top: none;
+}
+
+.autocomplete-wrapper .item {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.autocomplete-wrapper .item.selected-item {
+  background-color: #d84f57 !important;
+  color: #fafbfc;
+}
+
+.autocomplete-wrapper .item:hover {
+  background-color: #0069ff;
+  color: #fafbfc;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  height: 90vh;
+  justify-content: center;
+  background-image: url("./images/francesca-tirico-9G9vxsMzi18-unsplash.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.auth-inner {
+  width: 400px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 0px;
+  transition: all 0.3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #d84f57 !important;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #d84f57 !important;
+}
+.custom-control-input {
+  background-color: red;
+}
+.bus-content{
+  min-height: 60vh;
+  justify-content: center;
+
+}
+.journey-details{
+  display: flex;
+  width: 100%;
+
+  height: 60px;
+  margin-top: 7px;
+  align-items: center;
+  font-size: 1.1em;
+  font-weight: bold
+  ;
+  border-bottom: solid lightslategray 0.2px;
+}
+.details{
+  margin:10px;
+}
+.d-btn{
+  margin-left: auto;
+}
+.dest{
+  margin-right: 20px;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-content: flex-start;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: auto;
+}
+.sidebar-heading{
+  margin-bottom: 10px;
+}
+.item-button{
+  font-weight: normal;
+  font-size: 0.8rem;
+  padding: 10px;
+  border-top: linen solid 0.2px;
+}
+.buses{
+  display: flex;
+}
+.bus-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center
+}
+.card-style{
+  width: 90%!important;
+  margin: 10px;
+ 
+}
+.bus-essentials-row{
+  display: flex;
+  justify-content: space-between;
+  
+
+}
+.bus-items{
+  font-weight: bold;
+}
+.line{
+  border-top:  #d84f57 solid 5px;
+  border-radius: 4px;
+  width:60px;
+  margin-top: 5px;
+}
+
+.bus-description-row{
+  margin-top: 10px;
+  display: flex;
+  font-size: 0.9rem;
+}
+.rating{
+  margin-left: 480px;
+}
+.seats{
+  margin-left: 190px;
+}
+.window{
+  margin-left: auto;
+}
+.svg{
+  display: flex;
+  justify-content: start;
+}
+.amenities{
+  margin: 5px;
+}
+.view-seats{
+  margin-top: auto;
+  margin-left: auto;
+}
+.seats-view{
+  background-color:  #d84f57 !important;
+}
+>>>>>>> 7287a8f81032643ec015f145f69fcf5c89454221
