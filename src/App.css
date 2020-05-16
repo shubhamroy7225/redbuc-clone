@@ -191,7 +191,7 @@ span {
   display: flex;
   justify-content: center;
   text-align: left;
-  height: 90vh;
+  height: 100vh;
   justify-content: center;
   background-image: url("./images/francesca-tirico-9G9vxsMzi18-unsplash.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
