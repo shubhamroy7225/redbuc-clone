@@ -1,51 +1,43 @@
-import React, { Component } from 'react'
-import jwt_decode from 'jwt-decode'
+import React, { Component } from "react";
+import jwt_decode from "jwt-decode";
+import { FaUsers } from "react-icons/fa";
+import "./App.css";
 
 class Profile extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-      name: '',
-      email: '',
-      errors: {}
+      name: "",
+      email: "",
+      errors: {},
+    };
+  }
+  componentDidMount() {
+    const token = localStorage.usertoken;
+    try {
+      const decoded = jwt_decode(token);
+      console.log(decoded);
+      this.setState({
+        name: decoded.name,
+        email: decoded.email,
+      });
+    } catch {
+      console.log("something wrong");
     }
   }
 
-  componentDidMount() {
-    if(localStorage.getItem('jwt') === null || localStorage.getItem('jwt') === undefined){
-      return false
-    }else{
-    const token = localStorage.usertoken
-    const decoded = jwt_decode(token)
-    this.setState({
-      name: decoded.name,
-      email: decoded.email
-    })
-  }
-  }
   render() {
     return (
       <div className="container">
-        <div className="jumbotron mt-5">
-          <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">PROFILE</h1>
+        <div className="jumbotron mt-4">
+          <div class="test rounded-circle">
+            <FaUsers class="fa fa-user text-center" size={100} />
           </div>
-          <table className="table col-md-6 mx-auto">
-            <tbody>
-              <tr>
-                <td>Full Name</td>
-                <td>{this.state.name}</td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>{this.state.email}</td>
-              </tr>
-            </tbody>
-          </table>
+          <h5 className="text-center">{this.state.name}</h5>
+          <h3>{this.state.email}</h3>
         </div>
       </div>
-    )
+    );
   }
 }
-
-export default Profile
+export default Profile;

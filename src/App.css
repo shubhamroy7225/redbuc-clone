@@ -241,3 +241,9 @@ span {
 .custom-control-input {
   background-color: red;
 }
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  margin-left: 80px;
+}

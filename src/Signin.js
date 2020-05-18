@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { login } from "./UserRoutes";
 export default class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       password: "",

@@ -1,31 +1,9 @@
 import React, { Component } from "react";
 import { register } from "./UserRoutes";
 const regExp = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
-const formValid = ({ isError, ...rest }) => {
-  let isValid = false;
-
-  Object.values(isError).forEach((val) => {
-    if (val.length > 0) {
-      isValid = false;
-    } else {
-      isValid = true;
-    }
-  });
-
-  Object.values(rest).forEach((val) => {
-    if (val === null) {
-      isValid = false;
-    } else {
-      isValid = true;
-    }
-  });
-
-  return isValid;
-};
-
 class Register extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       email: "",
@@ -53,7 +31,10 @@ class Register extends Component {
     ) {
       register(newUser).then((res) => {
         this.props.history.push(`/sign-in`);
-      });
+      }).catch(err => {
+        this.props.history.push(`/`)
+        console.log(err)
+      })
     }
   }
   formValChange = (e) => {
@@ -62,8 +43,6 @@ class Register extends Component {
     let isError = { ...this.state.isError };
 
     switch (name) {
-      case "name":
-        isError.name = value.length < 1 ? "name can not be empty" : "";
       case "name":
         isError.name = value.length < 4 ? "Atleast 4 characaters required" : "";
         break;
