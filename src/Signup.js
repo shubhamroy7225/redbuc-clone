@@ -13,6 +13,7 @@ class Register extends Component {
         email: "",
         password: "",
       },
+      alertMessage: "",
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -31,10 +32,23 @@ class Register extends Component {
     ) {
       register(newUser).then((res) => {
         this.props.history.push(`/sign-in`);
-      }).catch(err => {
-        this.props.history.push(`/`)
-        console.log(err)
-      })
+      });
+    } else if (this.state.name !== "" && this.state.email == "") {
+      this.setState({
+        alertMessage: "Email can not be empty",
+      });
+    } else if (
+      this.state.name !== "" &&
+      this.state.email !== "" &&
+      this.state.password == ""
+    ) {
+      this.setState({
+        alertMessage: "Password can not be empty",
+      });
+    } else {
+      this.setState({
+        alertMessage: "Fields can not be empty",
+      });
     }
   }
   formValChange = (e) => {
@@ -64,71 +78,78 @@ class Register extends Component {
   };
 
   render() {
-    const { isError } = this.state;
+    const { isError, alertMessage } = this.state;
     return (
-      <form noValidate onSubmit={this.onSubmit}>
-        <h3>Sign Up</h3>
-        <div className="form-group">
-          <label htmlFor="name">Full name</label>
-          <input
-            type="text"
-            className={
-              isError.name.length > 0
-                ? "is-invalid form-control"
-                : "form-control"
-            }
-            name="name"
-            placeholder="Enter your first name"
-            value={this.state.name}
-            onChange={this.formValChange}
-          />
-          {isError.name.length > 0 && (
-            <span className="invalid-feedback">{isError.name}</span>
-          )}
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email address</label>
-          <input
-            type="email"
-            className={
-              isError.email.length > 0
-                ? "is-invalid form-control"
-                : "form-control"
-            }
-            name="email"
-            placeholder="Enter email"
-            value={this.state.email}
-            onChange={this.formValChange}
-          />
-          {isError.email.length > 0 && (
-            <span className="invalid-feedback">{isError.email}</span>
-          )}
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className={
-              isError.password.length > 0
-                ? "is-invalid form-control"
-                : "form-control"
-            }
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.formValChange}
-          />
-          {isError.password.length > 0 && (
-            <span className="invalid-feedback">{isError.password}</span>
-          )}
-        </div>
-        <button type="submit" className="btn btn-block btn-danger">
-          Create User
-        </button>
-        <p className="forgot-password text-right">
-          Already registered <a href="./Signin.js">sign in?</a>
-        </p>
-      </form>
+      <div>
+        {alertMessage ? (
+          <div class="alert alert-danger" role="alert">
+            {alertMessage}
+          </div>
+        ) : null}
+        <form noValidate onSubmit={this.onSubmit}>
+          <h3>Sign Up</h3>
+          <div className="form-group">
+            <label htmlFor="name">Full name</label>
+            <input
+              type="text"
+              className={
+                isError.name.length > 0
+                  ? "is-invalid form-control"
+                  : "form-control"
+              }
+              name="name"
+              placeholder="Enter your first name"
+              value={this.state.name}
+              onChange={this.formValChange}
+            />
+            {isError.name.length > 0 && (
+              <span className="invalid-feedback">{isError.name}</span>
+            )}
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+            <input
+              type="email"
+              className={
+                isError.email.length > 0
+                  ? "is-invalid form-control"
+                  : "form-control"
+              }
+              name="email"
+              placeholder="Enter email"
+              value={this.state.email}
+              onChange={this.formValChange}
+            />
+            {isError.email.length > 0 && (
+              <span className="invalid-feedback">{isError.email}</span>
+            )}
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className={
+                isError.password.length > 0
+                  ? "is-invalid form-control"
+                  : "form-control"
+              }
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.formValChange}
+            />
+            {isError.password.length > 0 && (
+              <span className="invalid-feedback">{isError.password}</span>
+            )}
+          </div>
+          <button type="submit" className="btn btn-block btn-danger">
+            Create User
+          </button>
+          <p className="forgot-password text-right">
+            Already registered <a href="./Signin.js">sign in?</a>
+          </p>
+        </form>
+      </div>
     );
   }
 }
