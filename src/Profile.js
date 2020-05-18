@@ -22,7 +22,7 @@ class Profile extends Component {
         email: decoded.email,
       });
     } catch {
-      console.log("something wrong");
+      console.log("Failed to decode JWT");
     }
   }
 
