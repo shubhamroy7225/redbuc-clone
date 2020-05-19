@@ -33,21 +33,19 @@ class Register extends Component {
       register(newUser).then((res) => {
         this.props.history.push(`/sign-in`);
       });
-    } else if (this.state.name !== "" && this.state.email == "") {
+    }else if (this.state.name == "") {
+      this.setState({
+        alertMessage: "Name can not be empty",
+      });
+    } else if (this.state.email == "") {
       this.setState({
         alertMessage: "Email can not be empty",
       });
     } else if (
-      this.state.name !== "" &&
-      this.state.email !== "" &&
       this.state.password == ""
     ) {
       this.setState({
         alertMessage: "Password can not be empty",
-      });
-    } else {
-      this.setState({
-        alertMessage: "Fields can not be empty",
       });
     }
   }

@@ -33,15 +33,16 @@ export default class Login extends Component {
             alertMessage: "Invalid user",
           });
         });
-    } else if (this.state.email !== "" && this.state.password == "") {
+    }else if (this.state.email == "") {
+      this.setState({
+        alertMessage: "Email can not be empty",
+      });
+    }
+     else if (this.state.password == "") {
       this.setState({
         alertMessage: "Password can not be empty",
       });
-    } else {
-      this.setState({
-        alertMessage: "Fields can not be empty",
-      });
-    }
+    } 
   }
   render() {
     const { alertMessage } = this.state;
