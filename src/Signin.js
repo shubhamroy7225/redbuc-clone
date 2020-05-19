@@ -21,11 +21,15 @@ export default class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    if (this.state.email !== "" && this.state.password !== "") {
+    if (this.state.email !== "" && this.state.password !== ""){
       login(user)
         .then((res) => {
-          if (res) {
+          if (!res.error) {
             this.props.history.push(`/home-page`);
+          }else{
+            this.setState({
+              alertMessage: "User does not exist",
+            });
           }
         })
         .catch((err) => {
@@ -33,16 +37,15 @@ export default class Login extends Component {
             alertMessage: "Invalid user",
           });
         });
-    }else if (this.state.email == "") {
+    } else if (this.state.email == "") {
       this.setState({
         alertMessage: "Email can not be empty",
       });
-    }
-     else if (this.state.password == "") {
+    } else if (this.state.password == "") {
       this.setState({
         alertMessage: "Password can not be empty",
       });
-    } 
+    }
   }
   render() {
     const { alertMessage } = this.state;

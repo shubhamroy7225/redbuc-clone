@@ -30,10 +30,16 @@ class Register extends Component {
       this.state.email !== "" &&
       this.state.password !== ""
     ) {
-      register(newUser).then((res) => {
-        this.props.history.push(`/sign-in`);
-      });
-    }else if (this.state.name == "") {
+      register(newUser)
+        .then((res) => {
+          this.props.history.push(`/sign-in`);
+        })
+        .catch((err) => {
+          this.setState({
+            alertMessage: "User is already exist",
+          });
+        });
+    } else if (this.state.name == "") {
       this.setState({
         alertMessage: "Name can not be empty",
       });
@@ -41,9 +47,7 @@ class Register extends Component {
       this.setState({
         alertMessage: "Email can not be empty",
       });
-    } else if (
-      this.state.password == ""
-    ) {
+    } else if (this.state.password == "") {
       this.setState({
         alertMessage: "Password can not be empty",
       });
@@ -151,5 +155,4 @@ class Register extends Component {
     );
   }
 }
-
 export default Register;
