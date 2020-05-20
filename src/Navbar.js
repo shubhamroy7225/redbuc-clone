@@ -1,14 +1,27 @@
 import React, { Component } from "react";
-
-
-
-
-//extra commit
-
-// for new commit
-
+import { withRouter } from "react-router-dom";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import Profile from "./Profile";
 class navbarInstance extends Component {
+  state = {
+    open: false,
+  };
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+  logOut(e) {
+    e.preventDefault();
+    localStorage.removeItem("usertoken");
+    this.props.history.push(`/`);
+  }
   render() {
+    const { open } = this.state;
     return (
       <nav
         className="navbar navbar-expand-lg navbar-light bg-light fixed-top "
@@ -106,17 +119,29 @@ class navbarInstance extends Component {
                   alt="pic"
                 />
               </a>
-              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div
+                className="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdown"
+              >
                 <a className="dropdown-item" href="/">
                   My Trips
                 </a>
                 <a className="dropdown-item" href="/">
                   Wallets/Cards
                 </a>
-                <a className="dropdown-item" href="/">
+                <a className="dropdown-item" onClick={this.onOpenModal}>
                   My Profile
                 </a>
-                <a className="dropdown-item" href="/">
+
+                <Modal open={open} onClose={this.onCloseModal} center>
+                  <Profile />
+                </Modal>
+
+                <a
+                  className="dropdown-item"
+                  onClick={this.logOut.bind(this)}
+                  href="/"
+                >
                   Sign Out
                 </a>
                 <a className="dropdown-item" href="/">
@@ -131,4 +156,4 @@ class navbarInstance extends Component {
   }
 }
 
-export default navbarInstance;
+export default withRouter(navbarInstance);
