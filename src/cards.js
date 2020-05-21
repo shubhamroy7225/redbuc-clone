@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -78,9 +79,12 @@ class Cards extends Component {
         </div>
         <div className="bus-description-row view-seats ">
           <div className="desc-item view-seats">
-            <button className="btn btn-light btn-sm seats-view">
+          <Link to={ {pathname: '/seats'}}>
+          <button className="btn btn-light btn-sm seats-view">
               VIEW SEATS
             </button>
+        </Link>
+           
           </div>
         </div>
       </div>

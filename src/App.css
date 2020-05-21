@@ -344,3 +344,187 @@ span {
 .seats-view{
   background-color:  #d84f57 !important;
 }
+
+
+.seats-layout-container{
+  width: 50%;
+  color:#4a4a4a;
+  height: 100vh;
+  background-color:#F5F5F5;
+  display: flex;
+  flex-direction: column;
+  
+}
+.lower{
+  margin-top: 10vh;
+  width: 100px;
+  margin-left: 40px;
+  
+  
+}
+.seats-layout{
+  width: 74%;
+  height: 30vh;
+  background-color: white;
+  margin-left: 40px;
+  display: flex;
+  margin-top: 10px;
+  border-left: grey solid 6px;
+
+
+}
+
+
+.steering-icon{
+  margin-right: auto;
+  margin: 5px;
+  height: 90%;
+  padding-right: 10px;
+  
+  border-right: #D3D3D3 solid 2px;
+}
+
+
+
+.seat-allignment{
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+.seat-row {
+  width:400px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.row-3{
+
+  margin-top:40px;
+}
+
+.seat-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none !important;
+    border:1px solid #D3D3D3;
+    height: 25px;
+    width: 50px;
+  }
+
+  .seat-button:disabled,
+.seat-button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.free-space{
+  width:40px
+}
+.seat-inner{
+  height: 15px;
+  width: 7px;
+  border:2px solid #D3D3D3;
+  margin-left: 39px;
+}
+.container-seats{
+  display: flex;
+  background-color: #F5F5F5;
+  
+}
+
+.Fare-details-box{
+  background-color: #FAFAFA;
+  margin-top: 14vh;
+  height: 70vh;
+  width:400px;
+  margin-left:200px;
+
+}
+.boarding-details{
+ 
+  display: flex;
+  flex-direction: column;
+}
+.boarding-heading{
+ padding-top: 40px;
+ margin: 10px;
+ font-weight: bolder;
+ font-size: large;
+ text-align: start;
+ padding-left: 10px;
+  
+
+}
+.boarding-point{
+  text-align: start;
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.boarding-info{
+  text-align: start;
+  padding-left: 40px;
+  color: grey;
+  margin-left: 20px;
+  margin-right: 20px;
+;
+}
+.dropping-point{
+  text-align: start;
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  
+}
+.drop-info{
+  padding-bottom: 40px;
+  border-bottom: 1px solid #D3D3D3;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+
+
+}
+.seat-selected{
+display: flex;
+justify-content: space-between;
+padding: 20px;
+font-weight: bold;
+}
+.total-fare{
+display: flex;
+justify-content: space-between;
+margin-right: 20px;
+font-weight: bold;
+margin-left: 20px;
+border-top: 1px solid #D3D3D3;
+padding-top:10px
+
+
+}
+.proceed-btn{
+  height: 40px;
+  width:400px;
+
+
+}
+.proceed-button{
+  margin: 10px;
+  margin-top: 20px;
+  height: 90%;
+  width: 90%;
+  background-color: #d84f57 !important;
+  outline: none;
+  border: none;
+
+ 
+}
