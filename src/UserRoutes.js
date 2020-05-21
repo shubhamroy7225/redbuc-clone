@@ -1,17 +1,10 @@
 import axios from "axios";
 export const register = (newUser) => {
-  return axios
-    .post("users/register", {
-      name: newUser.name,
-      email: newUser.email,
-      password: newUser.password,
-    })
-    .then((response) => {
-      console.log("Registered");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return axios.post("users/register", {
+    name: newUser.name,
+    email: newUser.email,
+    password: newUser.password,
+  });
 };
 export const login = (user) => {
   return axios
@@ -22,26 +15,11 @@ export const login = (user) => {
     .then((response) => {
       localStorage.setItem("usertoken", response.data);
       return response.data;
-    })
-    .catch((err) => {
-      console.log(err);
     });
 };
 
 export const getProfile = (user) => {
-  return axios
-    .get("users/profile", {
-      //headers: { Authorization: ` ${this.getToken()}` }
-    })
-    .then((response) => {
-      console.log(response);
-      return response.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return axios.get("users/profile", {}).then((response) => {
+    return response.data;
+  });
 };
-
-
-
-
