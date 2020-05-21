@@ -8,6 +8,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      
       Source: this.props.location.myprops.source,
       Destination: this.props.location.myprops.destination,
      Date: this.props.location.myprops.date.split(' ').slice(0,3).join(" "),

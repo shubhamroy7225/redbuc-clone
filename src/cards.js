@@ -79,7 +79,7 @@ class Cards extends Component {
         </div>
         <div className="bus-description-row view-seats ">
           <div className="desc-item view-seats">
-          <Link to={ {pathname: '/seats'}}>
+          <Link to={ {pathname: '/seats', props:{busId:this.state.bus.bus_number}}}>
           <button className="btn btn-light btn-sm seats-view">
               VIEW SEATS
             </button>

@@ -1,28 +1,14 @@
 import React, { Component } from "react";
+const axios = require("axios");
 class Seats extends Component {
   constructor() {
     super();
     this.state = {
-      availableSeats: [
-        "1L",
-        "3L",
-        "4L",
-        "7L",
-        "8L",
-        "9L",
-        "10L",
-        "11L",
-        "12L",
-        "13L",
-        "14L",
-        "15L",
-        "16L",
-        "17L",
-        "18L",
-      ],
-      bookedSeats: ["5L", "6L", "2L"],
-      currentlyBooked:[],
-      fair:900
+      busId: "",
+      availableSeats: [],
+      bookedSeats: [],
+      currentlyBooked: [],
+      fair: 900,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -40,24 +26,64 @@ class Seats extends Component {
         return seat !== seatId;
       }),
     });
-    console.log(this.state.availableSeats)
-    console.log(this.state.currentlyBooked)
-   
   };
   componentDidMount = () => {
-    this.state.bookedSeats.map(seat => {
-     return document.getElementById(seat).disabled = true
-    })
-       
-  }
 
-  fairdetails =() => {
-     return this.state.fair*this.state.currentlyBooked.length
-  }
+
+    this.setState({ busId: this.props.location.props.busId }, () =>
+    axios
+    .get("http://localhost:5000/bus/Seats", {
+      params: {
+        busId : this.state.busId
+        
+      },
+    })
+    .then(
+      (response) => {
+        console.log(response);
+        this.setState({ availableSeats: response.data[0].available_seat_array});
+        this.setState({ bookedSeats: response.data[0].booked_seat_array});
+      },
+      (error) => {
+        console.log(error);
+      }
+    ));
+    
+
+    this.state.bookedSeats.map((seat) => {
+      return (document.getElementById(seat).disabled = true);
+    });
+  };
+
+  fairdetails = () => {
+    return this.state.fair * this.state.currentlyBooked.length;
+  };
+
+
+  // buyTicket =() => {
+  //   axios
+  //   .PUT("http://localhost:5000/bus/Seats", {
+  //     params: {
+  //       busId : this.state.busId
+        
+  //     },
+  //   })
+  //   .then(
+  //     (response) => {
+  //       console.log(response);
+  //       this.setState({ availableSeats: response.data[0].available_seat_array});
+  //       this.setState({ bookedSeats: response.data[0].booked_seat_array});
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   ));
+
+  // }
 
   render() {
     return (
-      <div className="container-seats">
+      <div className="container-seats" bus_number>
         <div className="seats-layout-container">
           <div className="lower">Lower Deck</div>
           <div className="seats-layout">
@@ -76,7 +102,6 @@ class Seats extends Component {
                   className="seat-button"
                   id="1L"
                   onClick={this.handleClick}
-                
                 >
                   <div className="seat-inner"></div>
                 </button>
@@ -84,7 +109,6 @@ class Seats extends Component {
                   className="seat-button"
                   id="2L"
                   onClick={this.handleClick}
-                 
                 >
                   <div className="seat-inner"></div>
                 </button>
@@ -92,7 +116,6 @@ class Seats extends Component {
                   className="seat-button"
                   id="3L"
                   onClick={this.handleClick}
-              
                 >
                   <div className="seat-inner"></div>
                 </button>
@@ -100,7 +123,6 @@ class Seats extends Component {
                   className="seat-button"
                   id="4L"
                   onClick={this.handleClick}
-                 
                 >
                   <div className="seat-inner"></div>
                 </button>
@@ -215,62 +237,134 @@ class Seats extends Component {
             <div className="free-space"></div>
             <div className="seats-allignment">
               <div className="seat-row row-1">
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="1U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="2U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="3U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="4U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="5U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="6U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
               </div>
               <div className="seat-row row-2">
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="7U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="8U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="9U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="10U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="11U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="12U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
               </div>
               <div className="seat-row row-3">
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="13U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="14U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="15U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="16U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="17U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
-                <button className="seat-button">
+                <button
+                  className="seat-button"
+                  id="18U"
+                  onClick={this.handleClick}
+                >
                   <div className="seat-inner"></div>
                 </button>
               </div>
@@ -296,7 +390,7 @@ class Seats extends Component {
                 Fare Details<div>{this.fairdetails()}</div>
               </div>
               <div className="proceed-btn">
-                <button className="proceed-button ">PROCEED TO BOOK</button>
+                <button className="proceed-button " onClick={this.buyTicket}> PROCEED TO BOOK</button>
               </div>
             </div>
           </div>
