@@ -155,5 +155,4 @@ class navbarInstance extends Component {
     );
   }
 }
-
 export default withRouter(navbarInstance);

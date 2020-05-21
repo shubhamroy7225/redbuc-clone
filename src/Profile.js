@@ -10,19 +10,21 @@ class Profile extends Component {
       name: "",
       email: "",
       errors: {},
+      alertMessage: "",
     };
   }
   componentDidMount() {
     const token = localStorage.usertoken;
     try {
       const decoded = jwt_decode(token);
-      console.log(decoded);
       this.setState({
         name: decoded.name,
         email: decoded.email,
       });
     } catch {
-      console.log("Failed to decode JWT");
+      this.setState({
+        alertMessage: "User does not exist",
+      });
     }
   }
 

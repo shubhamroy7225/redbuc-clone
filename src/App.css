@@ -247,3 +247,15 @@ span {
   background-color: white;
   margin-left: 80px;
 }
+
+.card{
+  width: 50rem;
+  height: 50vh;
+  margin: auto;
+  
+}
+
+.cart-text{
+  font-size: 0.9;
+  text-align: left;
+}
