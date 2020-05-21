@@ -26,7 +26,7 @@ class Content extends Component {
 
   render() {
     return (
-      <div className="container-fluid Search ">
+       <div className="container-fluid Search ">
         <div className="search-Component mt-5">
           <div className="input-group">
             <div className="autocomplete-wrapper">
