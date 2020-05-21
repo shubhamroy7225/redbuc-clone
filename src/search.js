@@ -10,14 +10,12 @@ class Search extends Component {
     this.state = {
       Source: this.props.location.myprops.source,
       Destination: this.props.location.myprops.destination,
-     Date: this.props.location.myprops.date.split(' ').slice(0,3).join(" "),
+      Date: this.props.location.myprops.date.split(" ").slice(0, 3).join(" "),
       busesFound: [],
     };
   }
 
   componentDidMount() {
-
-    
     axios
       .get("http://localhost:5000/bus/search", {
         params: {
@@ -44,9 +42,7 @@ class Search extends Component {
             <div className="details">{this.state.Source}</div>
             <div>To</div>
             <div className="details dest">{this.state.Destination}</div>
-            {/* <button className='btn btn-light btn-small'>></button> */}
             <div className="details">{this.state.Date}</div>
-            {/* <button  className='btn btn-light btn-small'>></button> */}
             <div className="details d-btn">
               <button className="btn btn-light">Reshedule</button>
             </div>

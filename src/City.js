@@ -1,7 +1,7 @@
 export function CityData() {
     return [
       { cityName: "Bangalore" },
-      { cityName: "Mombai" },
+      { cityName: "Mumbai" },
       { cityName: "Delhi" },
       { cityName: "Hyderabad" },
       { cityName: "Ahmedabad" },
