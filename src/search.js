@@ -67,7 +67,7 @@ class Search extends Component {
             </div>
             <div className="bus-container">
               {this.state.busesFound.map((bus) => (
-                <Cards busInfo={bus} />
+                <Cards busInfo={bus} Source={this.state.Source} Destination={this.state.Destination} Date={this.state.Date}/>
               ))}
             </div>
           </div>

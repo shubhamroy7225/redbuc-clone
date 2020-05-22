@@ -528,3 +528,47 @@ padding-top:10px
 
  
 }
+.form-input{
+  width:90%
+}
+.ticket-content{
+  min-height: 50vh;
+}
+.card{
+  width: 60%;
+  margin: 40px;
+  margin-left: 100px;
+}
+.card-history{
+  display:flex;
+  flex-direction: column;
+}
+.upper-row-1{
+  display: flex;
+  justify-content: space-between;
+
+}
+.lower-row-1{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.color{
+  background-color: #d84f57 !important; 
+  color:white
+}
+.card-container{
+  padding: 20px;
+ 
+  border: 1px solid 
+  #D3D3D3
+
+}
+.travel-log{
+  margin-top: 20px;
+}
+.card-1{
+  margin-left: 240px;
+  margin-bottom: 20px;
+}

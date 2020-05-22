@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 class Cards extends Component {
   constructor(props) {
     super(props);
-    this.state = { bus: this.props.busInfo };
+    this.state = { bus: this.props.busInfo,
+                   Source:this.props.Source,
+                  Destination:this.props.Destination,
+                   Date: this.props.Date };
   }
 
   render() {
@@ -79,7 +82,7 @@ class Cards extends Component {
         </div>
         <div className="bus-description-row view-seats ">
           <div className="desc-item view-seats">
-          <Link to={ {pathname: '/seats', props:{busId:this.state.bus.bus_number}}}>
+          <Link to={ {pathname: '/seats', props:{busId:this.state.bus.bus_number, source:this.state.Source, destination:this.state.Destination, date:this.state.Date}}}>
           <button className="btn btn-light btn-sm seats-view">
               VIEW SEATS
             </button>

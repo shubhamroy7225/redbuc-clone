@@ -2,11 +2,6 @@ import React, { Component } from "react";
 
 
 
-
-//extra commit
-
-// for new commit
-
 class navbarInstance extends Component {
   render() {
     return (
@@ -14,7 +9,7 @@ class navbarInstance extends Component {
         className="navbar navbar-expand-lg navbar-light bg-light fixed-top "
         id="mainNavbar"
       >
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/homepage">
           {" "}
           <img
             src={require("./images/transport(1).png")}
@@ -72,7 +67,7 @@ class navbarInstance extends Component {
                 Manage Bookings
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/">
+                <a className="dropdown-item" href="/myTickets">
                   Bus Tickets
                 </a>
                 <a className="dropdown-item" href="/">
@@ -81,7 +76,7 @@ class navbarInstance extends Component {
                 <a className="dropdown-item" href="/">
                   Reschedule
                 </a>
-                <a className="dropdown-item" href="/">
+                <a className="dropdown-item" href="/ticket">
                   Show My Ticket
                 </a>
                 <a className="dropdown-item" href="/">
