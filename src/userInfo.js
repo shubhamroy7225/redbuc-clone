@@ -18,6 +18,7 @@ class UserInfo extends Component {
         };
       }
       mySubmitHandler = (event) => {
+        console.log(this.state.busId)
         event.preventDefault();
         
               axios
@@ -51,6 +52,25 @@ class UserInfo extends Component {
                   console.log(error);
                 }
               );
+
+
+
+              axios
+    .put("http://localhost:5000/bus/Seats", {
+      params: {
+        busId : this.state.busId
+        
+      },
+    })
+    .then(
+      (response) => {
+        console.log(response);
+       
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
           
             }
          
